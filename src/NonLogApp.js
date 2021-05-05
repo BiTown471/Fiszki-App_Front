@@ -1,20 +1,38 @@
 import React from "react";
 import './sass/NonLogApp.css';
+import WordService from "./service/WordService";
 
 class NonLogApp extends React.Component{
 
     state = {
+        word :"",
+        description: "",
+        corectAnswer: false,
 
     }
+    componentDidMount() {
+        const apiUrl = 'http://localhost:8080/oneflashcard';
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => this.setState(
+                {
+                        word: data.englishWord,
+                        description: data.englishWordDesc,
+                    }
+                )
+            );
+
+                }
 
     render() {
         return (
             <div className="flashcardLearn">
                 <div className="flashcard">
-                    <p>Name</p>
-                    <br/>
-                    <p>Description</p>
-                </div>
+                  <div>
+                      <p>{this.state.word}</p>
+
+                      <p>{this.state.description}</p>
+                  </div>
                 <div>
                     <ul>
                         <li className="AnswerWord">
@@ -31,6 +49,7 @@ class NonLogApp extends React.Component{
                         </li>
                     </ul>
                 </div>
+            </div>
             </div>
         )
     }
