@@ -1,3 +1,20 @@
 .flashcardLearn{
-  background-color: #87bbe8;
+  background-color: #072593;
+  width: 60%;
+  height: 55%;
+  margin: 20px;
+}
+
+.flashcard{
+  margin: 20px;
+  padding: 20px;
+  border-style: dashed;
+  border-color: #6f6e6e;
+  background-color: #ffffff;
+  border-color: #6f6e6e;
+  color: black;
+}
+
+.AnswerWord{
+
 }
