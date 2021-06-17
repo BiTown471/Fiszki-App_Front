@@ -1,11 +1,6 @@
 import React from "react";
-import {withRouter} from 'react-router';
 
 class HomeComponnent extends React.Component{
-    GoToNonLogApp(){
-        this.props.history.push('/nonlogapp');
-    }
-
     render() {
         return (
             <div className="App">
@@ -15,8 +10,8 @@ class HomeComponnent extends React.Component{
                   <p>Hasło</p>
                     <input type="text"/>
                   <button onClick={() => this.props.history.push('/logapp')}>zaloguj</button>
-                  <button onClick={() => this.props.history.push('/nonlogapp')}>stwórz konto</button>
-                  <button onClick={() => this.props.history.push('/nonlogapp')}>wypróbuj bez konta </button>
+                  <button onClick={() => this.props.history.push('/addflashcard')}>stwórz fiszkę</button>
+                  <button onClick={() => this.props.history.push('/topicselect')}>wypróbuj bez konta </button>
               </header>
             </div>
           );
